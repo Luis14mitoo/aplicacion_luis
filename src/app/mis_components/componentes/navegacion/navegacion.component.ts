@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
+import {EntradaComponent} from  '../../entrada/entrada.component'
+
 @Component({
   selector: 'app-navegacion',
   templateUrl: './navegacion.component.html',
@@ -8,9 +10,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class NavegacionComponent implements OnInit {
 
-  constructor(private router: Router , private activedRoute: ActivatedRoute) { }
+  entradaComponent:EntradaComponent;
+  constructor(private router: Router , private activedRoute: ActivatedRoute,  ) { }
 
   ngOnInit(): void {
+  }
+
+
+  refrescar(){
+    this.entradaComponent.filterA
   }
 
 }

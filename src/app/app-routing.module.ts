@@ -12,11 +12,10 @@ redirectTo: '/inicio',
 pathMatch: 'full'
 },
 {
-  path:'inicio',
-  component: InicioComponent
-}
-,
-
+  path: 'inicio',
+  loadChildren: () => import('src/app/mis_components/entrada/entrada.module')
+    .then(mod => mod.EntradaModule)
+},
 {
  path:'inicio/componente1/:id',
  component:Componente1Component

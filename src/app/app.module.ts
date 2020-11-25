@@ -22,9 +22,10 @@ import { Componente1Component } from './mis_components/componentes/componente1/c
     
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    
     FormsModule,
     CommonModule,    
   ],
