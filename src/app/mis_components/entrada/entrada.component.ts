@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import {debounceTime} from 'rxjs/operators';
 
 import {EntradaService} from './entrada.service';
 import{Heroes} from '../interfaces/Heroes'
@@ -27,8 +29,14 @@ export class EntradaComponent implements OnInit {
   heroe1:string;
   heroes2:Heroes[];  
   filterPost:any;
+
+  buscar = new FormControl('',);
+
+
   
   @HostBinding('class') clases='row'; 
+
+
 
  //  items: any;
  items: any = [];
@@ -38,7 +46,22 @@ export class EntradaComponent implements OnInit {
   private router: Router , private activedRoute: ActivatedRoute,
   private state: TransferState,
   @Inject(PLATFORM_ID) private platformId: object,
-  @Inject(APP_ID) private appId: string) { }
+  @Inject(APP_ID) private appId: string) {
+
+    this.buscar.valueChanges
+    .pipe(
+    debounceTime(1800)
+    )
+    .subscribe(value => {
+      this.heroe1=value;
+    console.log(value);
+    if(value.length>3){this.filter();}  
+    this.buscar.setValue('');
+    this.heroe1='';
+     
+  
+    })
+   }
 
 
 
@@ -97,7 +120,7 @@ export class EntradaComponent implements OnInit {
           }
           console.log('resultPost ',resultPost);
           this.heroes2=resultPost;
-          if(this.heroes2.length==0){alert("No encontramos ese nombre, prueba con otro"),this.heroe1=''}   return  this.heroes2;    }
+          if(this.heroes2.length==0){alert("No encontramos ese nombre, revisa la ortografia del nombre o prueba con otro"),this.heroe1=''}   return  this.heroes2;    }
 
         aleatorio(inferior :number, superior: number) {
           var numPosibilidades = superior - inferior;
@@ -106,6 +129,9 @@ export class EntradaComponent implements OnInit {
           aleatorio = Math.floor(aleatorio);
           return aleatorio;
         
+        }
+        quitar(){
+          this.heroes2=null;
         }
 
 

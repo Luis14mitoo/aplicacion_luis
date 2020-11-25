@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavegacionComponent } from './mis_components/componentes/navegacion/navegacion.component';
 import {HeroesService} from './mis_components/servicios/heroes.service';
-import { InicioComponent } from './mis_components/componentes/inicio/inicio.component';
 import { Componente1Component } from './mis_components/componentes/componente1/componente1.component';
 
 
@@ -18,8 +17,7 @@ import { Componente1Component } from './mis_components/componentes/componente1/c
     AppComponent,
     NavegacionComponent,   
     Componente1Component,
-    InicioComponent,
-    
+        
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { EntradaRoutingModule } from './entrada-routing.module';
@@ -12,7 +13,8 @@ import {EntradaService} from './entrada.service';
   imports: [
     CommonModule,    
     FormsModule,
-    EntradaRoutingModule
+    EntradaRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     EntradaComponent

@@ -26,6 +26,7 @@
     "@angular/router": "~10.1.6",
     "@nguniversal/express-engine": "^10.1.0",
     "bootstrap": "^4.5.3",
+    "bootstrap-icons": "^1.1.0",
     "bootswatch": "^4.5.3",
     "express": "^4.15.2",
     "filter-env": "^1.1.2",

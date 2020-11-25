@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { InicioComponent } from './mis_components/componentes/inicio/inicio.component';
+
 import { Componente1Component } from './mis_components/componentes/componente1/componente1.component';
 
 

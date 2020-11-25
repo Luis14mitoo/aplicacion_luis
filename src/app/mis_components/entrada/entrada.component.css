@@ -1,0 +1,11 @@
+
+
+#icon {
+    display: inline-block;
+    content: "";
+    background-image: url("../../../assets/lupaB.png");
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5rem;
+    background-position: right ;
+    
+  }
